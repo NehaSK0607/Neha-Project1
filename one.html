@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Hub</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="elegant-style.css">
+    <style>
+        /* Additional styles specific to index.html if needed */
+        .content-area {
+            padding: 20px;
+            text-align: center;
+        }
+        /* Styles for the tour layout */
+        .tour-container {
+            display: flex; /* Arrange video and description side-by-side */
+            flex-direction: column; /* Stack sections vertically now */
+            gap: 20px; /* Space between video and description */
+            text-align: left; /* Align text left within sections */
+            margin-top: 20px;
+        }
+        .tour-description {
+            flex: 1.5; /* Make description area slightly larger */
+            min-width: 300px;
+        }
+        .tour-description .tour-section {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #e9ecef; /* Default light border */
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+            max-width: 80%; /* Limit width for zigzag */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); /* Slightly adjusted base shadow */
+            animation: subtleBob 2s ease-in-out infinite alternate; /* Faster bobbing animation */
+        }
+        .tour-section:hover {
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+            /* Temporarily remove transform on hover to isolate animation */
+        }
+        .tour-description h4 {
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .tour-description p {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+        /* Zigzag alignment */
+        .tour-section.align-left {
+            margin-right: auto; /* Push to the left */
+            text-align: left;
+        }
+        .tour-section.align-right {
+            margin-left: auto; /* Push to the right */
+            text-align: right;
+        }
+        /* Pleasant Color Coding for Sections (Perimeter Only) */
+        /* Apply border based on alignment */
+        .align-left#tour-welcome {
+            /* background-color: #fefae0; */ /* Removed background */
+            animation-delay: 0s; /* Start immediately */
+            border-left: 5px solid #f4a261; /* Cream/Yellowish-Orange border */
+        }
+        .align-right#tour-notes {
+            /* background-color: #e0f7fa; */ /* Removed background */
+            animation-delay: -0.4s; /* Start slightly offset */
+            border-right: 5px solid #2a9d8f; /* Cyan/Blue-Green border */
+        }
+        .align-left#tour-papers {
+            /* background-color: #e8f5e9; */ /* Removed background */
+            animation-delay: -0.8s; /* Start more offset */
+            border-left: 5px solid #8ab17d; /* Green border */
+        }
+        .align-right#tour-summaries {
+            /* background-color: #fff3e0; */ /* Removed background */
+            animation-delay: -1.2s; /* Start even more offset */
+            border-right: 5px solid #e76f51; /* Orange/Peach border */
+        }
+        .align-left#tour-links {
+            /* background-color: #f3e5f5; */ /* Removed background */
+            animation-delay: -1.6s; /* Start most offset */
+            border-left: 5px solid #b5838d; /* Lavender/Mauve border */
+        }
+        /* Ensure right-aligned sections don't have a left border if default is applied */
+        .align-right {
+            border-left: 1px solid #e9ecef; /* Match default border */
+        }
+
+        /* Keyframes for the subtle bobbing animation */
+        @keyframes subtleBob {
+            0% {
+                /* Start at original vertical position */
+                transform: translateY(0);
+            }
+            100% {
+                /* Move slightly up */
+                transform: translateY(-8px); /* Increased movement to -8px */
+            }
+        }
+         /* Footer Styles */
+         footer {
+            text-align: center;
+            margin-top: 40px; /* Add some space above the footer */
+            padding: 15px 0;
+            font-size: 0.9em;
+            color: #6c757d; /* Subtle gray color */
+        }
+
+        /* Glow effect for main heading */
+        header.first h1 {
+            transition: text-shadow 0.3s ease; /* Smooth transition for the glow */
+        }
+        header.first h1:hover {
+            /* Add a purple-blue-pink glow using text-shadow */
+            text-shadow: 0 0 10px rgba(210, 170, 250, 0.95), 0 0 15px rgba(170, 170, 255, 0.8);
+            /* You can adjust the color (rgba values) and blur radius (8px, 12px) */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="first">
+        <h1>Welcome to Your Academic Hub</h1>
+        <p>Quick access to all your resources</p>
+    </header>
+
+    <nav>
+        <a href="one.html">Homepage</a>
+        <a href="notes.html">Notes</a>
+        <a href="papers.html">Question Papers</a>
+        <a href="summaries.html">Short Notes</a>
+        <a href="links.html">Quick links</a>
+        <!-- Add login/admin links later -->
+    </nav>
+
+    <!-- Example placeholder for dashboard content -->
+    <main id="dashboard" class="content-area">
+        <h2>Website Tour</h2>
+
+        <div class="tour-container">
+            <!-- Video section removed -->
+            <div class="tour-description">
+                <!-- Apply alternating alignment classes -->
+                <div class="tour-section align-left" id="tour-welcome">
+                    <h4>Welcome!</h4>
+                    <p>This site helps you access academic resources easily. Here's a breakdown:</p>
+                </div>
+                <div class="tour-section align-right" id="tour-notes">
+                    <h4><a href="notes.html">Notes</a></h4>
+                    <p>Find detailed subject notes organized by semester. Hover over a semester to see the subjects.</p>
+                </div>
+                <div class="tour-section align-left" id="tour-papers">
+                    <h4><a href="papers.html">Question Papers</a></h4>
+                    <p>Access previous year question papers, also sorted by semester and revealed on hover.</p>
+                </div>
+                <div class="tour-section align-right" id="tour-summaries">
+                    <h4><a href="summaries.html">Short Notes</a></h4>
+                    <p>Get quick summaries and key points for various subjects, useful for quick revisions.</p>
+                </div>
+                <div class="tour-section align-left" id="tour-links">
+                    <h4><a href="links.html">Quick Links</a></h4>
+                    <p>A collection of useful external links like ECAP, GCAP, Moodle, and other important resources.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- You would add more sections or link to other HTML pages for Notes, Papers etc. -->
+
+    <!-- Add JavaScript files here if needed later -->
+    <!-- Script link removed as video is gone -->
+    <div class="cursor-glow"></div> <!-- Add this div for the glow -->
+    <script src="cursor-glow.js" defer></script> <!-- Link the new JS file -->
+
+    <footer>
+        <p>&copy; <span id="copyright-year"></span> Neha. All rights reserved forever.</p>
+    </footer>
+
+    <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

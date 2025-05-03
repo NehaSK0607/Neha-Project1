@@ -1,0 +1,199 @@
+/* --- Elegant, Light & Soft Theme --- */
+
+/* General Body Styles */
+body {
+    font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Using Lato for elegance, fallback */
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdff; /* Very light, almost white background */
+    color: #5a6a7a; /* Soft grey-blue text */
+    line-height: 1.7;
+    font-weight: 300; /* Lighter font weight */
+}
+
+/* Header Styles */
+.first {
+    background: linear-gradient(135deg, #e0f7fa 0%, #d1c4e9 100%); /* Soft gradient: light cyan-blue to light purple */
+    color: #3e4a58; /* Darker soft blue for contrast */
+    padding: 25px 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.first h1 {
+    margin: 0;
+    font-size: 2.4em;
+    font-weight: 400; /* Slightly bolder than body */
+}
+
+.first p {
+    margin: 8px 0 0;
+    font-size: 1.1em;
+    color: #6a7a8a; /* Slightly lighter than h1 */
+    font-weight: 300;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #ffffff; /* Clean white background */
+    padding: 12px 0;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); /* Very subtle shadow */
+    border-bottom: 1px solid #f0f0f0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #6772d8; /* Soft purple for links */
+    margin: 0 15px;
+    padding: 8px 15px;
+    border-radius: 15px; /* Pill shape */
+    font-weight: 400;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    border: 1px solid transparent; /* Placeholder for hover effect */
+}
+
+nav a:hover, nav a:focus {
+    color: #4caf50; /* Soft greenish on hover/focus */
+    background-color: #e8f5e9; /* Very light green background */
+    border-color: #c8e6c9; /* Subtle green border */
+    outline: none;
+}
+
+/* Main Content Area Styles (for notes, papers, summaries pages) */
+.content-area {
+    padding: 30px 35px;
+    max-width: 950px;
+    margin: 40px auto; /* More vertical space */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* Slightly more pronounced shadow */
+    border: 1px solid #f0f0f0;
+}
+
+.content-area h2 {
+    color: #4a5a6a;
+    text-align: center;
+    margin-bottom: 35px;
+    font-weight: 400;
+    font-size: 1.8em;
+}
+
+/* Semester Section Styles */
+.semester-section {
+    margin-bottom: 35px;
+    border-bottom: 1px dashed #e0e7ff; /* Dashed light blue separator */
+    padding-bottom: 25px;
+}
+
+.semester-section:last-child {
+    border-bottom: none;
+}
+
+.semester-section h3 {
+    color: #7e57c2; /* Medium Purple for semester headings */
+    margin-bottom: 20px;
+    font-weight: 500; /* Make headings stand out a bit */
+    font-size: 1.4em;
+    border-left: 3px solid #a5d6a7; /* Soft green accent line */
+    padding-left: 10px;
+}
+
+/* Add a visual cue that the heading is hoverable */
+.semester-section h3 {
+    cursor: pointer; /* Indicate it's interactive */
+    transition: color 0.3s ease;
+}
+
+/* Change heading color slightly on hover */
+.semester-section:hover h3 {
+    color: #4caf50; /* Soft greenish on hover - matches nav hover */
+}
+
+/* List Styles (Common for notes, papers, summaries) */
+.subject-list-container { /* New container for the lists */
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; /* Smooth reveal */
+    padding-left: 15px; /* Indent the list slightly when shown */
+}
+
+.note-list, .paper-list, .summary-list {
+    list-style: none;
+}
+
+.note-list li, .paper-list li, .summary-list li {
+    margin-bottom: 12px;
+    padding: 12px 18px;
+    background-color: #f8f9fc; /* Very light off-white/blue */
+    border-radius: 6px;
+    transition: all 0.25s ease-in-out;
+    border-left: 3px solid #b3e5fc; /* Light blue left border */
+}
+
+.note-list li a, .paper-list li a, .summary-list li a {
+    text-decoration: none;
+    color: #455a64; /* Darker blue-grey for link text */
+    font-weight: 400;
+    display: block;
+}
+
+.note-list li:hover, .paper-list li:hover, .summary-list li:hover {
+    background-color: #e3f2fd; /* Slightly darker blue on hover */
+    border-left-color: #6772d8; /* Purple border on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transform: translateX(3px); /* Slight move effect */
+}
+
+/* Reveal the list container when hovering the semester section */
+.semester-section:hover .subject-list-container {
+    max-height: 600px; /* Make visible - adjust if you have very long lists */
+}
+
+/* ALSO reveal list when hovering over notes or papers sections individually */
+.note-list:hover, .paper-list:hover, .summary-list:hover {
+    max-height: 600px;
+}
+
+/* Dashboard Specific Styles (from one.html) */
+.feature-placeholder {
+    background-color: #f1f8e9; /* Light greenish background */
+    color: #556b2f; /* Olive green text */
+    padding: 35px;
+    margin: 25px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    border: 1px dashed #c5e1a5; /* Dashed light green border */
+}
+
+.feature-placeholder a {
+    color: #ffffff; /* White color for links */
+    text-decoration: underline; /* Add underline for clarity */
+    margin: 0 10px; /* Add some horizontal spacing */
+}
+/* Style for the highlighted tour section */
+.tour-section.highlight {
+    background-color: #eef2f7; /* Light blue background */
+    border-left: 5px solid #0056b3; /* Blue left border */
+    /* Add any other highlight effects you want */
+}
+
+/* Cursor Glow Effect */
+.cursor-glow {
+    position: fixed; /* Position relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 40px; /* Size of the glow */
+    height: 40px;
+    border-radius: 50%; /* Make it circular */
+    /* Soft blue glow using radial gradient and blur */
+    background: radial-gradient(circle, rgba(173, 216, 230, 0.5) 0%, rgba(173, 216, 230, 0) 70%);
+    filter: blur(5px); /* Soften the edges */
+    pointer-events: none; /* Allows clicking through the glow */
+    z-index: 9999; /* Keep it on top of other elements */
+    transform: translate(-50%, -50%); /* Center the glow on the cursor */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.2s ease-out; /* Smooth fade-in */
+}
